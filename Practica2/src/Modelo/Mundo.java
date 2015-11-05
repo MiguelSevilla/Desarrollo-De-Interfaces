@@ -86,7 +86,6 @@ public class Mundo {
 	public void modificaPuntuacion(){
 		puntuacion =puntuacion + 10;
 		frame.getEtPuntuacion().setText("Puntuación: "+String.valueOf(puntuacion));
-		System.out.printf("Puntuacion: "+puntuacion);
 	}
 	
 	
