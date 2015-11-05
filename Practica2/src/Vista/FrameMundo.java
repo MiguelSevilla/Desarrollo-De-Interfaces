@@ -24,7 +24,7 @@ public class FrameMundo extends JFrame{
 		setLayout(new BorderLayout());
 		vista = new UT1P02Vista(this);
 		etVidas = new JLabel("Vidas: " + (vista.getM().getVidas()));
-		etPuntuacion = new JLabel("Puntuación: "+0);
+		etPuntuacion = new JLabel("PuntuaciÃ³n: "+0);
 		JPanel pinfo = new JPanel(new FlowLayout());
 		
 		pinfo.add(etVidas);
@@ -32,6 +32,8 @@ public class FrameMundo extends JFrame{
 		
 		add(vista,BorderLayout.CENTER);
 		add(pinfo,BorderLayout.SOUTH);
+		
+		/*Esto es una mierda gorda*/
 		
 		setSize(600,720);
 		
