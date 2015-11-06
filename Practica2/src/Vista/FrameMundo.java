@@ -30,10 +30,11 @@ public class FrameMundo extends JFrame{
 		pinfo.add(etVidas);
 		pinfo.add(etPuntuacion);
 		
+		
 		add(vista,BorderLayout.CENTER);
 		add(pinfo,BorderLayout.SOUTH);
 		
-		setSize(600,720);
+		setSize(520,720);
 		
 		
 		//frame.setResizable(false);
