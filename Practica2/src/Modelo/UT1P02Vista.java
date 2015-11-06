@@ -51,15 +51,21 @@ public class UT1P02Vista extends JPanel implements KeyListener{
 	
 	public void paint(Graphics g){
 		Graphics2D g2 = (Graphics2D)g;
+		super.paint(g2);
 		if(!m.isGameover()){
-			super.paint(g2);
-			pintaPantalla(g2, m.getPant());
-			pintaMarco(g2, m.getPant());
-			pintaNave(g2,m.getJugador());
-			pintaBola(g2,m.getBola());
-			pintaBloques(g2,m.getBloques());
+			if(m.isGanador()){
+				g2.setColor(Color.BLACK);
+				g2.fillRect(0, 0, m.getPant().getAncho(), m.getPant().getLargo());
+				g2.setColor(Color.WHITE);
+				g2.drawString("WINNER", 220, 320);
+			}else{
+				pintaPantalla(g2, m.getPant());
+				pintaMarco(g2, m.getPant());
+				pintaNave(g2,m.getJugador());
+				pintaBola(g2,m.getBola());
+				pintaBloques(g2,m.getBloques());
+			}
 		}else{
-			super.paint(g2);
 			g2.setColor(Color.BLACK);
 			g2.fillRect(0, 0, m.getPant().getAncho(), m.getPant().getLargo());
 			g2.setColor(Color.WHITE);

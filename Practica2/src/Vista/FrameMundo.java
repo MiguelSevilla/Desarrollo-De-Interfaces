@@ -36,8 +36,7 @@ public class FrameMundo extends JFrame{
 		
 		setSize(520,720);
 		
-		
-		//frame.setResizable(false);
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}

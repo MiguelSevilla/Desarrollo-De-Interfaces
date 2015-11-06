@@ -86,7 +86,6 @@ public class Mundo {
 	public void modificaPuntuacion(){
 		puntuacion =puntuacion + 10;
 		frame.getEtPuntuacion().setText("Puntuación: "+String.valueOf(puntuacion));
-		/*jpjpjp*/
 	}
 	
 	
@@ -96,6 +95,7 @@ public class Mundo {
 	public void moverBolaAutomaticamente(){
 		
 		Colision col;
+		boolean flagganador=true;
 		
 		/*Colision con la pantalla*/
 		
@@ -185,6 +185,17 @@ public class Mundo {
 	
 			bola.setXpos(bola.getXpos()+bola.getAuxx());
 			bola.setYpos(bola.getYpos()+bola.getAuxy());
+		}
+		
+		/*Comprueba si ha ganado*/
+		
+		for (int i=0;i<12;i++){
+			for (int j=0;j<12;j++){
+				
+				if(bloques[i][j].getEstado()!=Bloque.DESTRUIDO)
+					flagganador = false;
+				ganador = flagganador;
+			}
 		}
 		
 	}
