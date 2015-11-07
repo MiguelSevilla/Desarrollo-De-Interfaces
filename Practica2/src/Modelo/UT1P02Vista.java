@@ -66,13 +66,20 @@ public class UT1P02Vista extends JPanel implements KeyListener{
 				pintaBloques(g2,m.getBloques());
 			}
 		}else{
-			g2.setColor(Color.BLACK);
-			g2.fillRect(0, 0, m.getPant().getAncho(), m.getPant().getLargo());
-			g2.setColor(Color.WHITE);
-			g2.drawString("GAME OVER", 220, 320);
+			pintaPantalla(g2, m.getPant());
+			pintaMarco(g2, m.getPant());
+			pintaBloques(g2,m.getBloques());
+			pintaBola(g2,m.getBola());
+			pintaGameOver(g2,m.getPant());
 			
 		}
 	}
+	
+	public void pintaGameOver(Graphics2D g, Pantalla p){
+
+		g.drawImage(mi.getImggameover(), (p.getAncho()/2)-(283/2), (p.getLargo()/2)-(124/2), 283, 124,null);
+	}
+	
 	
 	
 	public void pintaMarco(Graphics2D g, Pantalla p){

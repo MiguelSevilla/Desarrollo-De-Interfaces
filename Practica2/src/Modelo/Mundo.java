@@ -17,7 +17,7 @@ public class Mundo {
 	private boolean ganador; //Si tenemos ganador hay true
 	private int puntuacion;
 	private int inicio; //Si esta en 1 la bola esta sobre la nave
-	private boolean gameover=false;
+	private boolean gameover;
 	//private ManejadorSonidos ms;
 	
 	
@@ -32,6 +32,7 @@ public class Mundo {
 		puntuacion = 0;
 		inicio = 1;
 		ganador = false;
+		gameover=false;
 		
 		inicializaMapa();
 		
@@ -99,102 +100,105 @@ public class Mundo {
 		
 		/*Colision con la pantalla*/
 		
-		if(bola.getXpos()+1>=pant.getAncho()-bola.getTamaño()-pant.getTamañoborde()){
-			bola.setAuxx(Bola.IZQUIERDA);
-			//ManejadorSonidos.PARED.play();
-			/*
-			try {
-				ms.sonidoPared();
-			} catch (LineUnavailableException | IOException
-					| UnsupportedAudioFileException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
-		}
-		if(bola.getXpos()-1<=pant.getTamañoborde()){
-			bola.setAuxx(Bola.DERECHA);
-			/*
-			try {
-				ms.sonidoPared();
-			} catch (LineUnavailableException | IOException
-					| UnsupportedAudioFileException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
-		}
-		if(bola.getYpos()-1<=pant.getTamañoborde()){
-			bola.setAuxy(Bola.ABAJO);
-			/*
-			try {
-				ms.sonidoPared();
-			} catch (LineUnavailableException | IOException
-					| UnsupportedAudioFileException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
-		}
-		if(bola.getYpos()+1>=pant.getLargo()-bola.getTamaño()){
-			quitarVida();
-			if(vidas<1)
-				terminarJuego();
-			
-			bola.reiniciarBola(jugador);
-		}
+		if(!(isGanador() || isGameover())){
 		
-	
-		
-		if(bola.colisionNaveExacta(jugador).getPosicioncolision()==Bloque.NORTE)
-			bola.setAuxy(Bola.ARRIBA);
-		if(bola.colisionNaveExacta(jugador).getPosicioncolision()==Bloque.OESTE)
-			bola.setAuxx(Bola.IZQUIERDA);
-		if(bola.colisionNaveExacta(jugador).getPosicioncolision()==Bloque.ESTE)
-			bola.setAuxx(Bola.DERECHA);
-
-		/*Colision bola con todos los bloques*/
-		
-		for (int i=0;i<12;i++){
-			for (int j=0;j<12;j++){
-				col=bola.colisionBloqueExacta(bloques[i][j]);
+			if(bola.getXpos()+1>=pant.getAncho()-bola.getTamaño()-pant.getTamañoborde()){
+				bola.setAuxx(Bola.IZQUIERDA);
+				//ManejadorSonidos.PARED.play();
+				/*
+				try {
+					ms.sonidoPared();
+				} catch (LineUnavailableException | IOException
+						| UnsupportedAudioFileException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}*/
+			}
+			if(bola.getXpos()-1<=pant.getTamañoborde()){
+				bola.setAuxx(Bola.DERECHA);
+				/*
+				try {
+					ms.sonidoPared();
+				} catch (LineUnavailableException | IOException
+						| UnsupportedAudioFileException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}*/
+			}
+			if(bola.getYpos()-1<=pant.getTamañoborde()){
+				bola.setAuxy(Bola.ABAJO);
+				/*
+				try {
+					ms.sonidoPared();
+				} catch (LineUnavailableException | IOException
+						| UnsupportedAudioFileException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}*/
+			}
+			if(bola.getYpos()+1>=pant.getLargo()-bola.getTamaño()){
+				quitarVida();
+				if(vidas<1)
+					terminarJuego();
 				
-								
-				if(col.getPosicioncolision()==Bloque.ESTE && bloques[i][j].getEstado()==Bloque.NORMAL){
-					bola.setAuxx(Bola.DERECHA);
-					bloques[i][j].setEstado(Bloque.DESTRUIDO);
-					modificaPuntuacion();
-				}
-				if(col.getPosicioncolision()==Bloque.OESTE && bloques[i][j].getEstado()==Bloque.NORMAL){
-					bola.setAuxx(Bola.IZQUIERDA);
-					bloques[i][j].setEstado(Bloque.DESTRUIDO);
-					modificaPuntuacion();
-				}
-				if(col.getPosicioncolision()==Bloque.NORTE && bloques[i][j].getEstado()==Bloque.NORMAL){
-					bola.setAuxy(Bola.ARRIBA);
-					bloques[i][j].setEstado(Bloque.DESTRUIDO);
-					modificaPuntuacion();
-				}
-				if(col.getPosicioncolision()==Bloque.SUR && bloques[i][j].getEstado()==Bloque.NORMAL){
-					bola.setAuxy(Bola.ABAJO);
-					bloques[i][j].setEstado(Bloque.DESTRUIDO);
-					modificaPuntuacion();
+				bola.reiniciarBola(jugador);
+			}
+			
+		
+			
+			if(bola.colisionNaveExacta(jugador).getPosicioncolision()==Bloque.NORTE)
+				bola.setAuxy(Bola.ARRIBA);
+			if(bola.colisionNaveExacta(jugador).getPosicioncolision()==Bloque.OESTE)
+				bola.setAuxx(Bola.IZQUIERDA);
+			if(bola.colisionNaveExacta(jugador).getPosicioncolision()==Bloque.ESTE)
+				bola.setAuxx(Bola.DERECHA);
+	
+			/*Colision bola con todos los bloques*/
+			
+			for (int i=0;i<12;i++){
+				for (int j=0;j<12;j++){
+					col=bola.colisionBloqueExacta(bloques[i][j]);
+					
+									
+					if(col.getPosicioncolision()==Bloque.ESTE && bloques[i][j].getEstado()==Bloque.NORMAL){
+						bola.setAuxx(Bola.DERECHA);
+						bloques[i][j].setEstado(Bloque.DESTRUIDO);
+						modificaPuntuacion();
+					}
+					if(col.getPosicioncolision()==Bloque.OESTE && bloques[i][j].getEstado()==Bloque.NORMAL){
+						bola.setAuxx(Bola.IZQUIERDA);
+						bloques[i][j].setEstado(Bloque.DESTRUIDO);
+						modificaPuntuacion();
+					}
+					if(col.getPosicioncolision()==Bloque.NORTE && bloques[i][j].getEstado()==Bloque.NORMAL){
+						bola.setAuxy(Bola.ARRIBA);
+						bloques[i][j].setEstado(Bloque.DESTRUIDO);
+						modificaPuntuacion();
+					}
+					if(col.getPosicioncolision()==Bloque.SUR && bloques[i][j].getEstado()==Bloque.NORMAL){
+						bola.setAuxy(Bola.ABAJO);
+						bloques[i][j].setEstado(Bloque.DESTRUIDO);
+						modificaPuntuacion();
+					}
 				}
 			}
-		}
+			
+			
+			if(inicio==0){
 		
-		
-		if(inicio==0){
-	
-			bola.setXpos(bola.getXpos()+bola.getAuxx());
-			bola.setYpos(bola.getYpos()+bola.getAuxy());
-		}
-		
-		/*Comprueba si ha ganado*/
-		
-		for (int i=0;i<12;i++){
-			for (int j=0;j<12;j++){
-				
-				if(bloques[i][j].getEstado()!=Bloque.DESTRUIDO)
-					flagganador = false;
-				ganador = flagganador;
+				bola.setXpos(bola.getXpos()+bola.getAuxx());
+				bola.setYpos(bola.getYpos()+bola.getAuxy());
+			}
+			
+			/*Comprueba si ha ganado*/
+			
+			for (int i=0;i<12;i++){
+				for (int j=0;j<12;j++){
+					
+					if(bloques[i][j].getEstado()!=Bloque.DESTRUIDO)
+						flagganador = false;
+					ganador = flagganador;
+				}
 			}
 		}
 		

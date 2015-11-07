@@ -17,7 +17,9 @@ public class ManejadorImagenes {
 	private BufferedImage imgmarcoizq;
 	private BufferedImage imgmarcoder;
 	private BufferedImage imgmarcoarriba;
-	
+	private BufferedImage imggameover;
+
+
 	public ManejadorImagenes(){
 		
 		
@@ -27,11 +29,24 @@ public class ManejadorImagenes {
 		inicializaNave();
 		imgbloque = new ArrayList<BufferedImage>();
 		inicializaBloques();
+		inicializaGameover();
 		
 	}
 	
 
 	
+	private void inicializaGameover() {
+		try {
+			imggameover = ImageIO.read(new File("img/gameover.gif"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+
+
 	public void inicializaPantalla(){
 		try {
 			imgpantalla = ImageIO.read(new File("img/Background.png"));
@@ -196,6 +211,17 @@ public class ManejadorImagenes {
 	public void setImgpantalla(BufferedImage imgpantalla) {
 		this.imgpantalla = imgpantalla;
 	}
+	
+	
+	public BufferedImage getImggameover() {
+		return imggameover;
+	}
+
+	public void setImggameover(BufferedImage imggameover) {
+		this.imggameover = imggameover;
+	}
+
+
 	
 
 
