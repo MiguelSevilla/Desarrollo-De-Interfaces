@@ -13,6 +13,7 @@ public class FrameMundo extends JFrame{
 
 	private JLabel etVidas;
 	private JLabel etPuntuacion;
+	private MenuDesplegable mdesple;
 
 
 	private UT1P02Vista vista;
@@ -21,6 +22,7 @@ public class FrameMundo extends JFrame{
 
 	public FrameMundo(){
 		super("Practica 2");
+		mdesple = new MenuDesplegable();
 		setLayout(new BorderLayout());
 		vista = new UT1P02Vista(this);
 		etVidas = new JLabel("Vidas: " + (vista.getM().getVidas()));
@@ -30,7 +32,7 @@ public class FrameMundo extends JFrame{
 		pinfo.add(etVidas);
 		pinfo.add(etPuntuacion);
 		
-		
+		add(mdesple,BorderLayout.NORTH);
 		add(vista,BorderLayout.CENTER);
 		add(pinfo,BorderLayout.SOUTH);
 		
