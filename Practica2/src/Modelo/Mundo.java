@@ -210,6 +210,25 @@ public class Mundo {
 	}
 	
 	
+	public void reiniciarMundo(){
+		
+			vidas=3;
+			puntuacion = 0;
+			inicio = 1;
+			ganador = false;
+			gameover=false;
+			bola.setXpos(230);
+			bola.setYpos(620-17);
+			jugador.setX(210);
+			jugador.setY(620);
+			frame.getEtPuntuacion().setText("Puntuación: "+String.valueOf(puntuacion));
+			frame.getEtVidas().setText("Vidas: " + (String.valueOf(vidas)));
+			
+			inicializaMapa();
+			
+		
+	}
+	
 	
 
 	/*Getters y Setters*/

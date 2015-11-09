@@ -22,9 +22,9 @@ public class FrameMundo extends JFrame{
 
 	public FrameMundo(){
 		super("Practica 2");
-		mdesple = new MenuDesplegable();
 		setLayout(new BorderLayout());
 		vista = new UT1P02Vista(this);
+		mdesple = new MenuDesplegable(vista.getM());
 		etVidas = new JLabel("Vidas: " + (vista.getM().getVidas()));
 		etPuntuacion = new JLabel("Puntuación: "+0);
 		JPanel pinfo = new JPanel(new FlowLayout());
