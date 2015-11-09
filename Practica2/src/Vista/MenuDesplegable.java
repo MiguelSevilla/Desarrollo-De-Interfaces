@@ -7,7 +7,7 @@ import javax.swing.JMenuItem;
 public class MenuDesplegable extends JMenuBar{
 
 	 private JMenu menu1,menu2,menu3;
-	 private JMenuItem item1, item2, item3, item4;
+	 private JMenuItem item1, item2, item3, item4, item5 ,item6;
 	
 	
 	public MenuDesplegable(){
@@ -17,7 +17,7 @@ public class MenuDesplegable extends JMenuBar{
         add(menu1);
         menu2 = new JMenu("Nivel");
         add(menu2);
-        menu3 = new JMenu("Acerca de");
+        menu3 = new JMenu("Ayuda");
         add(menu3);
 
 	        item1 = new JMenuItem("Nueva Partida");
@@ -31,6 +31,12 @@ public class MenuDesplegable extends JMenuBar{
 	        
 	        item4 = new JMenuItem("Nivel 2");
 	        menu2.add(item4);
+	        
+	        item5 = new JMenuItem("Controles");
+	        menu3.add(item5);
+	        
+	        item6 = new JMenuItem("Acerca de");
+	        menu3.add(item6);
 
 	}
 }
