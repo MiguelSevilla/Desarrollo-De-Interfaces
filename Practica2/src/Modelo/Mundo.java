@@ -3,7 +3,6 @@ package Modelo;
 
 import java.awt.Frame;
 
-import GestionDeSonido.ManejadorSonidos;
 import Vista.FrameMundo;
 
 public class Mundo {

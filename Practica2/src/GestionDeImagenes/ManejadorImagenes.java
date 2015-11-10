@@ -7,6 +7,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+
+
+/*Clase que carga todas las imágenes a buffers para posteriormente utilizarlas*/
 public class ManejadorImagenes {
 
 

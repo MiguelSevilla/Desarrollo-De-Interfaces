@@ -3,26 +3,29 @@ package Modelo;
 import java.awt.Color;
 import java.awt.Rectangle;
 
+/*Clase con los metodos y atributos de un bloque del juego*/
 public class Bloque {
 	
 	private Color color;
 	private int x;
 	private int y;
-
+	private int ancho;
+	private int largo;
+	private int estado;	/*1-normal 0-destruido*/
+	
+	
+	/*CONSTANTES*/
+	
+	/*Estados de un bloque*/
 	final static int DESTRUIDO = 0;
 	final static int NORMAL = 1;
+	
 	/*Lados de la colision*/
 	final static int NO_COLISION = 0;
 	final static int NORTE = 1;
 	final static int SUR = 2;
 	final static int ESTE = 3;
 	final static int OESTE = 4;
-	
-	
-	private int ancho;
-	private int largo;
-	/*1-normal 0-destruido*/
-	private int estado;
 	
 	
 	

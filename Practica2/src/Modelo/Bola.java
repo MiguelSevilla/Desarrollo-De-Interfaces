@@ -3,38 +3,35 @@ package Modelo;
 import java.awt.Color;
 import java.awt.Rectangle;
 
+/*Clase con los metodos y atributos de la bola del juego*/
+
 public class Bola {
 
+	private int xpos;
+	private int ypos;
+	private int tamaño;
+	private int auxx;
+	private int auxy;
+	
+	/*CONSTANTES*/
 	final static int ABAJO = 1;
 	final static int ARRIBA = -1;
 	final static int DERECHA = 1;
 	final static int IZQUIERDA = -1;
 	
-	Color color;
-	private int xpos;
-	private int ypos;
-	private float xvel; //>0 derecha <0 izquierda
-	private float yvel; //>0 arriba <0 abajo
-	private int tamaño;
-	private int auxx;
-	private int auxy;
 	
-	
-	
+	/*CONSTRUCTORES*/
 	
 	public Bola(int x,int y){
 		xpos=x;
 		ypos=y;
-		xvel=0;
-		yvel=0;
 		auxx=-1;
 		auxy=1;	
 		tamaño=17;
-		color=Color.BLUE;
 	}
 	
 	
-	/* Metodos */
+	/* METODOS */
 	
 		
 	public void moverBola(int x,int y){
@@ -42,19 +39,6 @@ public class Bola {
 		ypos=y;
 	}
 	
-	public void alterarVelocidadBola(float x,float y){
-		xvel=x;
-		yvel=y;
-	}
-	
-	public Rectangle getLimites(){
-		return new Rectangle(xpos,ypos,tamaño,tamaño);
-		
-	}
-	
-	public boolean colisionNave(Nave n){
-		return n.getLimites().intersects(getLimites());
-	}
 	
 	public void reiniciarBola(Nave n){
 		moverBola(n.getX()+20,n.getY()-tamaño);
@@ -167,16 +151,6 @@ public class Bola {
 	
 	/*Getters y Setters*/
 	
-
-	public Color getColor() {
-		return color;
-	}
-
-	public void setColor(Color color) {
-		this.color = color;
-	}
-
-	
 	public int getXpos() {
 		return xpos;
 	}
@@ -193,21 +167,6 @@ public class Bola {
 		this.ypos = ypos;
 	}
 
-	public float getXvel() {
-		return xvel;
-	}
-
-	public void setXvel(float xvel) {
-		this.xvel = xvel;
-	}
-
-	public float getYvel() {
-		return yvel;
-	}
-
-	public void setYvel(float yvel) {
-		this.yvel = yvel;
-	}
 
 	public int getTamaño() {
 		return tamaño;

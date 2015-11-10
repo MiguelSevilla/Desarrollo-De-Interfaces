@@ -69,7 +69,6 @@ public class UT1P02Vista extends JPanel implements KeyListener{
 			pintaPantalla(g2, m.getPant());
 			pintaMarco(g2, m.getPant());
 			pintaBloques(g2,m.getBloques());
-			pintaBola(g2,m.getBola());
 			pintaGameOver(g2,m.getPant());
 			
 		}

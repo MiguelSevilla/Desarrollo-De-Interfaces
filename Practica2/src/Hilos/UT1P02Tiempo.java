@@ -3,7 +3,7 @@ package Hilos;
 import Modelo.Mundo;
 import Modelo.UT1P02Vista;
 
-
+/*Clase que genera un hilo que mueve el juego, se actualiza la bola constantemente*/
 public class UT1P02Tiempo extends Thread{
 
 	UT1P02Vista jp;
@@ -17,7 +17,6 @@ public class UT1P02Tiempo extends Thread{
 	
 	public void run(){
 		while(true){
-			
 			m.moverBolaAutomaticamente();
 			try {
 				Thread.sleep(5);

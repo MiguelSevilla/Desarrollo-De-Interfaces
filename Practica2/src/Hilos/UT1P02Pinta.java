@@ -3,7 +3,7 @@ package Hilos;
 import Modelo.Mundo;
 import Modelo.UT1P02Vista;
 
-
+/*Clase que crea un hilo que repinta constantemente la pantalla del juego*/
 public class UT1P02Pinta extends Thread{
 
 	UT1P02Vista jp;
@@ -16,8 +16,9 @@ public class UT1P02Pinta extends Thread{
 	}
 	
 	public void run(){
+		/*blucle infinito para que repinte constantemente el juego*/
 		while(true){
-			
+			/*Metodo que limpia y pinta la pantalla*/
 			jp.repaint();
 			try {
 				Thread.sleep(5);
