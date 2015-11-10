@@ -7,8 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Modelo.UT1P02Vista;
-
 public class FrameMundo extends JFrame{
 
 	private JLabel etVidas;

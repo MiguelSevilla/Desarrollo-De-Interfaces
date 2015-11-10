@@ -1,7 +1,7 @@
 package Hilos;
 
 import Modelo.Mundo;
-import Modelo.UT1P02Vista;
+import Vista.UT1P02Vista;
 
 /*Clase que genera un hilo que mueve el juego, se actualiza la bola constantemente*/
 public class UT1P02Tiempo extends Thread{

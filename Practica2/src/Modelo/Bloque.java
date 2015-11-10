@@ -17,8 +17,8 @@ public class Bloque {
 	/*CONSTANTES*/
 	
 	/*Estados de un bloque*/
-	final static int DESTRUIDO = 0;
-	final static int NORMAL = 1;
+	public final static int DESTRUIDO = 0;
+	public final static int NORMAL = 1;
 	
 	/*Lados de la colision*/
 	final static int NO_COLISION = 0;

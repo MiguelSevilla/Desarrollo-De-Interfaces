@@ -1,7 +1,7 @@
 package Hilos;
 
 import Modelo.Mundo;
-import Modelo.UT1P02Vista;
+import Vista.UT1P02Vista;
 
 /*Clase que crea un hilo que repinta constantemente la pantalla del juego*/
 public class UT1P02Pinta extends Thread{

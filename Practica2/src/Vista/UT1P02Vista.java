@@ -1,4 +1,4 @@
-package Modelo;
+package Vista;
 
 import java.awt.Color;
 import java.awt.Frame;
@@ -10,9 +10,8 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 
 import GestionDeImagenes.ManejadorImagenes;
-import Hilos.UT1P02Pinta;
-import Hilos.UT1P02Tiempo;
-import Vista.FrameMundo;
+import Hilos.*;
+import Modelo.*;
 
 
 public class UT1P02Vista extends JPanel implements KeyListener{
