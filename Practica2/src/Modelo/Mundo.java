@@ -103,37 +103,12 @@ public class Mundo {
 		
 			if(bola.getXpos()+1>=pant.getAncho()-bola.getTamaño()-pant.getTamañoborde()){
 				bola.setAuxx(Bola.IZQUIERDA);
-				//ManejadorSonidos.PARED.play();
-				/*
-				try {
-					ms.sonidoPared();
-				} catch (LineUnavailableException | IOException
-						| UnsupportedAudioFileException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}*/
 			}
 			if(bola.getXpos()-1<=pant.getTamañoborde()){
 				bola.setAuxx(Bola.DERECHA);
-				/*
-				try {
-					ms.sonidoPared();
-				} catch (LineUnavailableException | IOException
-						| UnsupportedAudioFileException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}*/
 			}
 			if(bola.getYpos()-1<=pant.getTamañoborde()){
 				bola.setAuxy(Bola.ABAJO);
-				/*
-				try {
-					ms.sonidoPared();
-				} catch (LineUnavailableException | IOException
-						| UnsupportedAudioFileException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}*/
 			}
 			if(bola.getYpos()+1>=pant.getLargo()-bola.getTamaño()){
 				quitarVida();
