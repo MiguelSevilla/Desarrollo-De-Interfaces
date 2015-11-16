@@ -21,9 +21,7 @@ public class Mundo {
 	
 	
 	public Mundo(FrameMundo v){
-		
 
-		
 		frame = v;
 		pant= new Pantalla(500,650);
 		bloques = new Bloque[12][12];
@@ -48,6 +46,7 @@ public class Mundo {
 		if(direccion>0){
 			if(jugador.getX()!= pant.getAncho())
 				jugador.moverNave(jugador.getX()+1, jugador.getY(),pant);
+			//Se mueve a la izquierda
 		}else{
 			if(jugador.getX()!= 0)
 				jugador.moverNave(jugador.getX()-1, jugador.getY(),pant);
@@ -70,11 +69,7 @@ public class Mundo {
 			}
 		}
 	}
-	
-	public void incrementarVida(){
-		vidas++;
-	}
-	
+		
 	public void quitarVida(){
 		if(vidas>0){
 			vidas--;
@@ -82,7 +77,7 @@ public class Mundo {
 			inicio=1;
 		}
 	}
-	
+	/*Funcion a la que se llama cuando se rompe un bloque*/
 	public void modificaPuntuacion(){
 		puntuacion =puntuacion + 10;
 		frame.getEtPuntuacion().setText("Puntuación: "+String.valueOf(puntuacion));
@@ -90,7 +85,7 @@ public class Mundo {
 
 	
 	
-	
+	/*Funcion que mueve la bola y gestiona las colisiones*/
 	public void moverBolaAutomaticamente(){
 		
 		Colision col;
