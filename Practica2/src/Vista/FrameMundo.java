@@ -14,14 +14,14 @@ public class FrameMundo extends JFrame{
 	private MenuDesplegable mdesple;
 
 
-	private UT1P02Vista vista;
+	private PanelPintar vista;
 
 	
 
 	public FrameMundo(){
 		super("Practica 2");
 		setLayout(new BorderLayout());
-		vista = new UT1P02Vista(this);
+		vista = new PanelPintar(this);
 		mdesple = new MenuDesplegable(vista.getM());
 		etVidas = new JLabel("Vidas: " + (vista.getM().getVidas()));
 		etPuntuacion = new JLabel("Puntuación: "+0);
@@ -54,12 +54,12 @@ public class FrameMundo extends JFrame{
 	}
 
 
-	public UT1P02Vista getVista() {
+	public PanelPintar getVista() {
 		return vista;
 	}
 
 
-	public void setVista(UT1P02Vista vista) {
+	public void setVista(PanelPintar vista) {
 		this.vista = vista;
 	}
 

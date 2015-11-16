@@ -1,7 +1,5 @@
 package Modelo;
 
-import java.awt.Color;
-import java.awt.Rectangle;
 
 /*Clase con los metodos y atributos de la bola del juego*/
 

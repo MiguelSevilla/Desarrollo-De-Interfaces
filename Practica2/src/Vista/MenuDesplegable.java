@@ -17,8 +17,8 @@ import Modelo.Mundo;
 
 public class MenuDesplegable extends JMenuBar{
 
-	 private JMenu menu1,menu2,menu3;
-	 private JMenuItem item1, item2, item3, item4, item5 ,item6;
+	 private JMenu menu1,menu3;
+	 private JMenuItem item1, item2, item5 ,item6;
 	 Mundo m;
 	
 	
@@ -28,8 +28,6 @@ public class MenuDesplegable extends JMenuBar{
 		
 		menu1 = new JMenu("Editar");
         add(menu1);
-        menu2 = new JMenu("Nivel");
-        add(menu2);
         menu3 = new JMenu("Ayuda");
         add(menu3);
 
@@ -48,12 +46,6 @@ public class MenuDesplegable extends JMenuBar{
 	            	System.exit(0);
 	            }
 	        });
-	        
-	        item3 = new JMenuItem("Nivel 1");
-	        menu2.add(item3);
-	        
-	        item4 = new JMenuItem("Nivel 2");
-	        menu2.add(item4);
 	        
 	        item5 = new JMenuItem("Controles");
 	        

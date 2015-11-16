@@ -6,7 +6,7 @@ import java.awt.Frame;
 import Vista.FrameMundo;
 
 public class Mundo {
-
+	
 	private FrameMundo frame;
 	private Bloque [][] bloques;
 	private Nave jugador;
@@ -17,22 +17,22 @@ public class Mundo {
 	private int puntuacion;
 	private int inicio; //Si esta en 1 la bola esta sobre la nave
 	private boolean gameover;
-	//private ManejadorSonidos ms;
+
 	
 	
 	public Mundo(FrameMundo v){
+		
+
+		
 		frame = v;
-		//ms = new  ManejadorSonidos();
 		pant= new Pantalla(500,650);
-		vidas=3;
 		bloques = new Bloque[12][12];
 		bola = new Bola(230,620-17);
 		jugador = new Nave(210,620);
-		puntuacion = 0;
 		inicio = 1;
 		ganador = false;
 		gameover=false;
-		
+
 		inicializaMapa();
 		
 	}
@@ -87,8 +87,7 @@ public class Mundo {
 		puntuacion =puntuacion + 10;
 		frame.getEtPuntuacion().setText("Puntuación: "+String.valueOf(puntuacion));
 	}
-	
-	
+
 	
 	
 	

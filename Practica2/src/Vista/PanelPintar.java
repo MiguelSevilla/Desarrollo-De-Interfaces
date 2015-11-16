@@ -14,7 +14,7 @@ import Hilos.*;
 import Modelo.*;
 
 
-public class UT1P02Vista extends JPanel implements KeyListener{
+public class PanelPintar extends JPanel implements KeyListener{
 	
 	
 	
@@ -25,7 +25,7 @@ public class UT1P02Vista extends JPanel implements KeyListener{
 
 
 
-	public UT1P02Vista(FrameMundo ventana){
+	public PanelPintar(FrameMundo ventana){
 
 		
 		this.ventana= ventana;
